@@ -52,6 +52,8 @@ app.route(prefix + '/rooms')
   app.route(prefix + '/meetings')
   .post(room.postMeeting);
 
+  app.route(prefix + '/rooms/:id')
+  .get(room.getRoomById);
 // les meetings par roomId
 app.route(prefix + '/meetings/:id_room')
 .get(meeting.getMeetingByRoomId);

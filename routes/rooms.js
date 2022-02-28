@@ -63,4 +63,13 @@ function getMeetingByRoomId(req, res){
     })
 }
 
-module.exports = { getRooms ,postRoom,postMeeting , getMeetingByRoomId};
+function getRoomById(req, res){
+    let roomId = req.params.id;
+
+    Room.findOne({id: roomId}, (err, room) =>{
+        if(err){res.send(err)}
+        res.json(room);
+    })
+}
+
+module.exports = { getRooms ,postRoom,postMeeting , getMeetingByRoomId, getRoomById };
