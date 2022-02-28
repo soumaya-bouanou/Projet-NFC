@@ -52,4 +52,15 @@ function postMeeting(req, res){
     })
 }
 
-module.exports = { getRooms ,postRoom,postMeeting};
+// Récupérer tous les Meeting par room_id (GET)
+
+function getMeetingByRoomId(req, res){
+    let meetingId = req.params.id_room;
+
+    Meeting.findOne({id_room: meetingId}, (err, meeting) =>{
+        if(err){res.send(err)}
+        res.json(meeting);
+    })
+}
+
+module.exports = { getRooms ,postRoom,postMeeting , getMeetingByRoomId};

@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let room = require('./routes/rooms');
+let meeting = require('./routes/rooms');
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -39,6 +40,8 @@ const options = {
   
   let port = process.env.PORT || 8010;
 
+
+
   // les routes
 const prefix = '/api';
 
@@ -48,6 +51,10 @@ app.route(prefix + '/rooms')
 
   app.route(prefix + '/meetings')
   .post(room.postMeeting);
+
+// les meetings par roomId
+app.route(prefix + '/meetings/:id_room')
+.get(meeting.getMeetingByRoomId);
 
   // On démarre le serveur
 app.listen(port, "0.0.0.0");
