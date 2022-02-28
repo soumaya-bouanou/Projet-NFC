@@ -46,6 +46,8 @@ app.route(prefix + '/rooms').get(room.getRooms);
 app.route(prefix + '/rooms')
   .post(room.postRoom);
 
+  app.route(prefix + '/meetings')
+  .post(room.postMeeting);
 
   // On démarre le serveur
 app.listen(port, "0.0.0.0");

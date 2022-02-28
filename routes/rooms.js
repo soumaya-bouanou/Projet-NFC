@@ -1,4 +1,5 @@
 let Room = require('../Model/room');
+let Meeting = require('../Model/meeting');
 
 // Récupérer tous les ROOM (GET)
 function getRooms(req, res){
@@ -31,5 +32,24 @@ function postRoom(req, res){
     })
 }
 
+// Ajout d'un meeting (POST)
+function postMeeting(req, res){
+    let meeting = new Meeting();
+    meeting.id = req.body.id;
+    meeting.start = req.body.start;
+    meeting.end = req.body.end;
+    meeting.id_room = req.body.id_room;
+    meeting.description = req.body.description;
 
-module.exports = { getRooms ,postRoom};
+    console.log("POST meeting reçu :");
+    console.log(meeting)
+
+    meeting.save( (err) => {
+        if(err){
+            res.send('cant post meeting ', err);
+        }
+        res.json({ message: `${meeting.description} saved!`})
+    })
+}
+
+module.exports = { getRooms ,postRoom,postMeeting};
