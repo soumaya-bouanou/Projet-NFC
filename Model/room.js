@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 
 let RoomSchema = Schema({
     id: Number,
-    num: String,
+    num: Number,
     material: [String],
     capacity: Number,
    
