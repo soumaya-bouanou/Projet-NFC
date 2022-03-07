@@ -1,11 +1,12 @@
 # Projet-NFC
 
 Membres :
-● Aanaya Nouhaila
-● Bouanou Soumaya
-● CHAH Asmae
+● Aanaya Nouhaila 
+● Bouanou Soumaya 
+● CHAH Asmae 
 
-- Description du projet :
+- Description du projet : 
+
 Notre projet aura pour objectif de faciliter la gestion des salles de réunions dans
 une entreprise en optimisant le temps de manière simplifiée. Des tags seront mis
 un peu partout dans les locaux de l’entreprise .Les employés pourront en
